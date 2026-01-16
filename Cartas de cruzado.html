@@ -1,0 +1,363 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Maniobras de cruzado</title>
+    <script src="Maniobras.js"></script>
+    <style>
+        .smallText      {color:#696969; font-size:10pt; margin-bottom: -15px}
+        .sideNumber     {text-align: center}
+        .slot           {text-align:center; outline:double 6px black; min-width:400px}
+        .cardContainer  {display:none; grid-template-columns:auto auto auto; padding:20px;text-align: left}
+    </style>
+</head>
+<body style="background-color: #696969;">
+    
+    <div style="display:grid; grid-template-rows: 15% auto; background-color: aquamarine">
+        
+        <div style="display:grid; grid-template-columns:8% auto 8%">
+            <div class="sideNumber">
+                <p>Mazo:</p>
+                <h1 id="pilaRobar">0</h1>
+                <!--<button style="width:fit-content; padding-top:20px; padding-bottom:20px; margin-top:15px" onclick="drawCard();">ROBAR CARTA</button>-->
+            </div>
+            
+            <div style="width:100%; display:grid; grid-template-columns: auto auto; column-gap:20px; grid-template-rows: auto auto auto; row-gap:20px; justify-items: center; margin-top: 50px;">
+                <div id="slot0" class="slot" style="background-color: rgb(197, 255, 172)">
+                    <div id="card0" class="cardContainer">
+                        <h1 id="manName" style="grid-column:1/span 3; text-align:center">Nombre maniobra</h1>
+                        <div style="grid-column:1/span 2; display:flex">
+                            <img id="manImg" style="width:64px; height:64px" src="images/test.png">
+                            <h2 id="manType" style="margin-left:10px">Tipo</h2>
+                        </div>
+                        
+                        <div class="dataSlice" style="margin-right:-20px">
+                            <p class="smallText" style="text-align:center">Nivel:</p>
+                            <h2 id="manLevel" style="text-align:center;">0</h2>
+                        </div>
+                        <div style="grid-column:1/span 3; display:grid; grid-template-columns: 30% 70%">
+                            <div style="display:grid; grid-template-rows: auto auto auto auto auto;">
+                                <div class="dataSlice">
+                                    <p class="smallText">Acción:</p>
+                                    <p id="manAccion">Ejemplo</p>
+                                </div>
+                                <div class="dataSlice">
+                                    <p class="smallText">Alcance:</p>
+                                    <p id="manAlcance">Ejemplo</p>
+                                </div>
+                                <div class="dataSlice">
+                                    <p class="smallText">Objetivo:</p>
+                                    <p id="manObjetivo">Ejemplo</p>
+                                </div>
+                                <div class="dataSlice">
+                                    <p class="smallText">Duración:</p>
+                                    <p id="manDuracion">Ejemplo</p>
+                                </div>
+                                <div class="dataSlice">
+                                    <p class="smallText">Condición:</p>
+                                    <p id="manCondicion">Ejemplo</p>
+                                </div>
+                            </div>
+                            <p id="manDesc">Descripción</p>
+                        </div>
+                    </div>
+                    
+                    <button id="drawButton0" style="width:fit-content; height:fit-content; padding-top:20px; padding-bottom:20px; display:initial" onclick="drawCard(0);">ROBAR CARTA</button>
+                </div>
+                <div id="slot1" class="slot" style="background-color: rgb(255, 172, 172)">
+                    <div id="card1" class="cardContainer">
+                        <h1 id="manName" style="grid-column:1/span 3; text-align:center">Nombre maniobra</h1>
+                        <div style="grid-column:1/span 2; display:flex">
+                            <img id="manImg" style="width:64px; height:64px" src="images/test.png">
+                            <h2 id="manType" style="margin-left:10px">Tipo</h2>
+                        </div>
+                        
+                        <div class="dataSlice" style="margin-right:-20px">
+                            <p class="smallText" style="text-align:center">Nivel:</p>
+                            <h2 id="manLevel" style="text-align:center;">0</h2>
+                        </div>
+                        <div style="grid-column:1/span 3; display:grid; grid-template-columns: 30% 70%">
+                            <div style="display:grid; grid-template-rows: auto auto auto auto auto;">
+                                <div class="dataSlice">
+                                    <p class="smallText">Acción:</p>
+                                    <p id="manAccion">Ejemplo</p>
+                                </div>
+                                <div class="dataSlice">
+                                    <p class="smallText">Alcance:</p>
+                                    <p id="manAlcance">Ejemplo</p>
+                                </div>
+                                <div class="dataSlice">
+                                    <p class="smallText">Objetivo:</p>
+                                    <p id="manObjetivo">Ejemplo</p>
+                                </div>
+                                <div class="dataSlice">
+                                    <p class="smallText">Duración:</p>
+                                    <p id="manDuracion">Ejemplo</p>
+                                </div>
+                                <div class="dataSlice">
+                                    <p class="smallText">Condición:</p>
+                                    <p id="manCondicion">Ejemplo</p>
+                                </div>
+                            </div>
+                            <p id="manDesc">Descripción</p>
+                        </div>
+                    </div>
+                    
+                    <button id="drawButton1" style="width:fit-content; height:fit-content; padding-top:20px; padding-bottom:20px; display:initial" onclick="drawCard(1);">ROBAR CARTA</button>
+                </div>
+                <div id="slot2" class="slot" style="background-color: rgb(172, 255, 200)">
+                    <div id="card2" class="cardContainer">
+                        <h1 id="manName" style="grid-column:1/span 3; text-align:center">Nombre maniobra</h1>
+                        <div style="grid-column:1/span 2; display:flex">
+                            <img id="manImg" style="width:64px; height:64px" src="images/test.png">
+                            <h2 id="manType" style="margin-left:10px">Tipo</h2>
+                        </div>
+                        
+                        <div class="dataSlice" style="margin-right:-20px">
+                            <p class="smallText" style="text-align:center">Nivel:</p>
+                            <h2 id="manLevel" style="text-align:center;">0</h2>
+                        </div>
+                        <div style="grid-column:1/span 3; display:grid; grid-template-columns: 30% 70%">
+                            <div style="display:grid; grid-template-rows: auto auto auto auto auto;">
+                                <div class="dataSlice">
+                                    <p class="smallText">Acción:</p>
+                                    <p id="manAccion">Ejemplo</p>
+                                </div>
+                                <div class="dataSlice">
+                                    <p class="smallText">Alcance:</p>
+                                    <p id="manAlcance">Ejemplo</p>
+                                </div>
+                                <div class="dataSlice">
+                                    <p class="smallText">Objetivo:</p>
+                                    <p id="manObjetivo">Ejemplo</p>
+                                </div>
+                                <div class="dataSlice">
+                                    <p class="smallText">Duración:</p>
+                                    <p id="manDuracion">Ejemplo</p>
+                                </div>
+                                <div class="dataSlice">
+                                    <p class="smallText">Condición:</p>
+                                    <p id="manCondicion">Ejemplo</p>
+                                </div>
+                            </div>
+                            <p id="manDesc">Descripción</p>
+                        </div>
+                    </div>
+                    
+                    <button id="drawButton2" style="width:fit-content; height:fit-content; padding-top:20px; padding-bottom:20px; display:initial" onclick="drawCard(2);">ROBAR CARTA</button>
+                </div>
+                <div id="slot3" class="slot" style="background-color: rgb(255, 172, 244)">
+                    <div id="card3" class="cardContainer">
+                        <h1 id="manName" style="grid-column:1/span 3; text-align:center">Nombre maniobra</h1>
+                        <div style="grid-column:1/span 2; display:flex">
+                            <img id="manImg" style="width:64px; height:64px" src="images/test.png">
+                            <h2 id="manType" style="margin-left:10px">Tipo</h2>
+                        </div>
+                        
+                        <div class="dataSlice" style="margin-right:-20px">
+                            <p class="smallText" style="text-align:center">Nivel:</p>
+                            <h2 id="manLevel" style="text-align:center;">0</h2>
+                        </div>
+                        <div style="grid-column:1/span 3; display:grid; grid-template-columns: 30% 70%">
+                            <div style="display:grid; grid-template-rows: auto auto auto auto auto;">
+                                <div class="dataSlice">
+                                    <p class="smallText">Acción:</p>
+                                    <p id="manAccion">Ejemplo</p>
+                                </div>
+                                <div class="dataSlice">
+                                    <p class="smallText">Alcance:</p>
+                                    <p id="manAlcance">Ejemplo</p>
+                                </div>
+                                <div class="dataSlice">
+                                    <p class="smallText">Objetivo:</p>
+                                    <p id="manObjetivo">Ejemplo</p>
+                                </div>
+                                <div class="dataSlice">
+                                    <p class="smallText">Duración:</p>
+                                    <p id="manDuracion">Ejemplo</p>
+                                </div>
+                                <div class="dataSlice">
+                                    <p class="smallText">Condición:</p>
+                                    <p id="manCondicion">Ejemplo</p>
+                                </div>
+                            </div>
+                            <p id="manDesc">Descripción</p>
+                        </div>
+                    </div>
+                    
+                    <button id="drawButton3" style="width:fit-content; height:fit-content; padding-top:20px; padding-bottom:20px; display:initial" onclick="drawCard(3);">ROBAR CARTA</button>
+                </div>
+                <div id="slot4" class="slot" style="background-color: rgb(172, 218, 255)">
+                    <div id="card4" class="cardContainer">
+                        <h1 id="manName" style="grid-column:1/span 3; text-align:center">Nombre maniobra</h1>
+                        <div style="grid-column:1/span 2; display:flex">
+                            <img id="manImg" style="width:64px; height:64px" src="images/test.png">
+                            <h2 id="manType" style="margin-left:10px">Tipo</h2>
+                        </div>
+                        
+                        <div class="dataSlice" style="margin-right:-20px">
+                            <p class="smallText" style="text-align:center">Nivel:</p>
+                            <h2 id="manLevel" style="text-align:center;">0</h2>
+                        </div>
+                        <div style="grid-column:1/span 3; display:grid; grid-template-columns: 30% 70%">
+                            <div style="display:grid; grid-template-rows: auto auto auto auto auto;">
+                                <div class="dataSlice">
+                                    <p class="smallText">Acción:</p>
+                                    <p id="manAccion">Ejemplo</p>
+                                </div>
+                                <div class="dataSlice">
+                                    <p class="smallText">Alcance:</p>
+                                    <p id="manAlcance">Ejemplo</p>
+                                </div>
+                                <div class="dataSlice">
+                                    <p class="smallText">Objetivo:</p>
+                                    <p id="manObjetivo">Ejemplo</p>
+                                </div>
+                                <div class="dataSlice">
+                                    <p class="smallText">Duración:</p>
+                                    <p id="manDuracion">Ejemplo</p>
+                                </div>
+                                <div class="dataSlice">
+                                    <p class="smallText">Condición:</p>
+                                    <p id="manCondicion">Ejemplo</p>
+                                </div>
+                            </div>
+                            <p id="manDesc">Descripción</p>
+                        </div>
+                    </div>
+                    
+                    <button id="drawButton4" style="width:fit-content; height:fit-content; padding-top:20px; padding-bottom:20px; display:initial" onclick="drawCard(4);">ROBAR CARTA</button>
+                </div>
+                <div id="slot5" class="slot" style="background-color: rgb(218, 172, 255)">
+                    <div id="card5" class="cardContainer">
+                        <h1 id="manName" style="grid-column:1/span 3; text-align:center">Nombre maniobra</h1>
+                        <div style="grid-column:1/span 2; display:flex">
+                            <img id="manImg" style="width:64px; height:64px" src="images/test.png">
+                            <h2 id="manType" style="margin-left:10px">Tipo</h2>
+                        </div>
+                        
+                        <div class="dataSlice" style="margin-right:-20px">
+                            <p class="smallText" style="text-align:center">Nivel:</p>
+                            <h2 id="manLevel" style="text-align:center;">0</h2>
+                        </div>
+                        <div style="grid-column:1/span 3; display:grid; grid-template-columns: 30% 70%">
+                            <div style="display:grid; grid-template-rows: auto auto auto auto auto;">
+                                <div class="dataSlice">
+                                    <p class="smallText">Acción:</p>
+                                    <p id="manAccion">Ejemplo</p>
+                                </div>
+                                <div class="dataSlice">
+                                    <p class="smallText">Alcance:</p>
+                                    <p id="manAlcance">Ejemplo</p>
+                                </div>
+                                <div class="dataSlice">
+                                    <p class="smallText">Objetivo:</p>
+                                    <p id="manObjetivo">Ejemplo</p>
+                                </div>
+                                <div class="dataSlice">
+                                    <p class="smallText">Duración:</p>
+                                    <p id="manDuracion">Ejemplo</p>
+                                </div>
+                                <div class="dataSlice">
+                                    <p class="smallText">Condición:</p>
+                                    <p id="manCondicion">Ejemplo</p>
+                                </div>
+                            </div>
+                            <p id="manDesc">Descripción</p>
+                        </div>
+                    </div>
+                    
+                    <button id="drawButton5" style="width:fit-content; height:fit-content; padding-top:20px; padding-bottom:20px; display:initial" onclick="drawCard(5);">ROBAR CARTA</button>
+                </div>
+                
+            </div>
+            
+            <div class="sideNumber" style="grid-column-start: 3;">
+                <p style="color: #771111">Descartes:</p>
+                <h1 id="pilaDescartes" style="color: #771111;">0</h1>
+            </div>
+        </div>
+        
+        
+    </div>
+    
+    
+    <script>
+        var drawPile = [];
+        var handPile = new Array(6);
+        var discardPile = [];
+        
+        for (var i = 0; i < 10/*maniobras.length*/; i++){
+            drawPile.push(i);
+        }
+        shuffle(drawPile);
+        updateUI();
+        
+        
+        
+        function drawCard(slotId){
+            if(drawPile.length == 0){
+                //Not sure yet.
+            }
+            else {
+                var maneuverId = drawPile.pop();
+                handPile[slotId] = maneuverId;
+                updateUI();
+                fillCardData(slotId, maneuverId);
+            }
+        }
+        
+        function discardCard(index){
+            // WIP !!!!!!!
+            discardPile.push(handPile.splice(index, 1));
+        }
+        
+        function shuffle(deck){
+            for (var i = deck.length - 1; i>0; i--){
+                var j = Math.floor(Math.random() * (i+1));
+                
+                var temp = deck[i];
+                deck[i] = deck[j];
+                deck[j] = temp;
+            }
+        }
+        
+        function updateUI(){
+            document.getElementById("pilaRobar").textContent=drawPile.length;
+            document.getElementById("pilaDescartes").textContent=discardPile.length;
+        }
+        
+        function fillCardData(slot, maneuver){
+            var cardSlot = "card"+ slot;
+            document.querySelector("#card"+ slot +" #manName").textContent=maniobras[maneuver].nombre;
+            //document.querySelector("#card"+ slot +" #manName").textContent=maniobras[maneuver].disciplina; Needs images
+            if (maniobras[maneuver].subtipo == ""){  //Si tiene subtipo, se le pone. Si no, solo cambiamos el tipo.
+                document.querySelector("#card"+ slot +" #manType").textContent=maniobras[maneuver].tipo;
+            } else {
+                document.querySelector("#card"+ slot +" #manType").textContent=maniobras[maneuver].tipo +" ["+ maniobras[maneuver].subtipo +"]";
+            }
+            switch (maniobras[maneuver].tipo){
+                case "Golpe": document.querySelector("#card"+ slot +" #manImg").src="images/type_Strike.png";
+                break;
+                case "Impulso": document.querySelector("#card"+ slot +" #manImg").src="images/type_Boost.png";
+                break;
+                case "Contraataque": document.querySelector("#card"+ slot +" #manImg").src="images/type_Counter.png";
+                break;
+                default: document.querySelector("#card"+ slot +" #manImg").src="images/error.gif";
+                break;
+            }
+            document.querySelector("#card"+ slot +" #manLevel").textContent=maniobras[maneuver].nivel;
+            document.querySelector("#card"+ slot +" #manAccion").textContent=maniobras[maneuver].accion;
+            document.querySelector("#card"+ slot +" #manAlcance").textContent=maniobras[maneuver].alcance;
+            document.querySelector("#card"+ slot +" #manObjetivo").textContent=maniobras[maneuver].objetivo;
+            document.querySelector("#card"+ slot +" #manDuracion").textContent=maniobras[maneuver].duracion;
+            document.querySelector("#card"+ slot +" #manCondicion").textContent=maniobras[maneuver].condicion;
+            document.querySelector("#card"+ slot +" #manDesc").textContent=maniobras[maneuver].descripcion;
+            
+            document.getElementById("card"+ slot).style.display="grid";
+            document.getElementById("drawButton"+ slot).style.display="none";
+            
+        }
+        
+    </script>
+</body>
+</html>
