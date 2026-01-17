@@ -5,27 +5,30 @@
     <script src="Maniobras.js"></script>
     <style>
         .smallText      {color:#696969; font-size:10pt; margin-bottom: -15px}
-        .sideNumber     {text-align: center}
-        .slot           {text-align:center; outline:double 6px black; min-width:400px}
-        .cardContainer  {display:none; grid-template-columns:auto auto auto; padding:20px;text-align: left}
+        .sideNumber     {text-align: center; background-color: rgb(255, 252, 155)}
+        .slot           {text-align:center; outline:double 6px black; min-width:400px; background-color: white;}
+        .cardContainer  {display:none; grid-template-columns:auto auto auto; padding:20px; text-align:left;}
+        .manName        {grid-column:1/span 3; text-align:center; background-color:rgb(229,229,229)}
+        .drawButton     {background-color: rgb(255, 252, 155); width:fit-content; height:fit-content; color:#776911; border-width:3px; border-color: #776911; padding: 10px 5px; font-weight:bold;}
+        .discardButton  {background-color: rgb(255, 100, 100); color:white; justify-self:right; border-radius:100%; border-width:3px; border-color: #771111; padding:5px 10px; grid-column-start:3; width:fit-content; font-weight:bold;}
+        .backgroundDisc {height:100%; width:100%; background-image:url(''); background-size:contain; background-repeat:no-repeat; background-position-x:center; filter:brightness(0.9)}
     </style>
     <meta name="viewport" content="width=device-width, initial-scale=0.1">
 </head>
-<body style="background-color: #696969;">
+<body style="background-color: #afafaf;">
     
-    <div style="display:grid; grid-template-rows: 15% auto; background-color: aquamarine">
+    <div style="display:grid">
         
         <div style="display:grid; grid-template-columns:8% auto 8%">
             <div class="sideNumber">
-                <p>Mazo:</p>
+                <h3>Mazo:</h3>
                 <h1 id="pilaRobar">0</h1>
-                <!--<button style="width:fit-content; padding-top:20px; padding-bottom:20px; margin-top:15px" onclick="drawCard();">ROBAR CARTA</button>-->
             </div>
             
             <div style="width:100%; display:grid; grid-template-columns: auto auto; column-gap:20px; grid-template-rows: auto auto auto; row-gap:20px; justify-items: center; margin-top: 50px;">
-                <div id="slot0" class="slot" style="background-color: rgb(197, 255, 172)">
+                <div id="slot0" class="slot">
                     <div id="card0" class="cardContainer">
-                        <h1 id="manName" style="grid-column:1/span 3; text-align:center">Nombre maniobra</h1>
+                        <h1 id="manName" class="manName">Nombre maniobra</h1>
                         <div style="grid-column:1/span 2; display:flex">
                             <img id="manImg" style="width:64px; height:64px" src="images/test.png">
                             <h2 id="manType" style="margin-left:10px">Tipo</h2>
@@ -58,15 +61,17 @@
                                     <p id="manCondicion">Ejemplo</p>
                                 </div>
                             </div>
-                            <p id="manDesc">Descripción</p>
+                            <div id="manDisc" class="backgroundDisc"><p id="manDesc">Descripción</p></div>
                         </div>
+
+                        <button id="discardButton" class="discardButton" onclick="discardCard(0)">X</button>
                     </div>
                     
-                    <button id="drawButton0" style="width:fit-content; height:fit-content; padding-top:20px; padding-bottom:20px; display:initial" onclick="drawCard(0);">ROBAR CARTA</button>
+                    <button id="drawButton0" class="drawButton" onclick="drawCard(0);">ROBAR MANIOBRA</button>
                 </div>
-                <div id="slot1" class="slot" style="background-color: rgb(255, 172, 172)">
+                <div id="slot1" class="slot">
                     <div id="card1" class="cardContainer">
-                        <h1 id="manName" style="grid-column:1/span 3; text-align:center">Nombre maniobra</h1>
+                        <h1 id="manName" class="manName">Nombre maniobra</h1>
                         <div style="grid-column:1/span 2; display:flex">
                             <img id="manImg" style="width:64px; height:64px" src="images/test.png">
                             <h2 id="manType" style="margin-left:10px">Tipo</h2>
@@ -99,15 +104,16 @@
                                     <p id="manCondicion">Ejemplo</p>
                                 </div>
                             </div>
-                            <p id="manDesc">Descripción</p>
+                            <div id="manDisc" class="backgroundDisc"><p id="manDesc">Descripción</p></div>
                         </div>
+                        <button id="discardButton" class="discardButton" onclick="discardCard(1)">X</button>
                     </div>
                     
-                    <button id="drawButton1" style="width:fit-content; height:fit-content; padding-top:20px; padding-bottom:20px; display:initial" onclick="drawCard(1);">ROBAR CARTA</button>
+                    <button id="drawButton1" class="drawButton" onclick="drawCard(1);">ROBAR MANIOBRA</button>
                 </div>
-                <div id="slot2" class="slot" style="background-color: rgb(172, 255, 200)">
+                <div id="slot2" class="slot">
                     <div id="card2" class="cardContainer">
-                        <h1 id="manName" style="grid-column:1/span 3; text-align:center">Nombre maniobra</h1>
+                        <h1 id="manName" class="manName">Nombre maniobra</h1>
                         <div style="grid-column:1/span 2; display:flex">
                             <img id="manImg" style="width:64px; height:64px" src="images/test.png">
                             <h2 id="manType" style="margin-left:10px">Tipo</h2>
@@ -140,15 +146,16 @@
                                     <p id="manCondicion">Ejemplo</p>
                                 </div>
                             </div>
-                            <p id="manDesc">Descripción</p>
+                            <div id="manDisc" class="backgroundDisc"><p id="manDesc">Descripción</p></div>
                         </div>
+                        <button id="discardButton" class="discardButton" onclick="discardCard(2)">X</button>
                     </div>
                     
-                    <button id="drawButton2" style="width:fit-content; height:fit-content; padding-top:20px; padding-bottom:20px; display:initial" onclick="drawCard(2);">ROBAR CARTA</button>
+                    <button id="drawButton2" class="drawButton" onclick="drawCard(2);">ROBAR MANIOBRA</button>
                 </div>
-                <div id="slot3" class="slot" style="background-color: rgb(255, 172, 244)">
+                <div id="slot3" class="slot">
                     <div id="card3" class="cardContainer">
-                        <h1 id="manName" style="grid-column:1/span 3; text-align:center">Nombre maniobra</h1>
+                        <h1 id="manName" class="manName">Nombre maniobra</h1>
                         <div style="grid-column:1/span 2; display:flex">
                             <img id="manImg" style="width:64px; height:64px" src="images/test.png">
                             <h2 id="manType" style="margin-left:10px">Tipo</h2>
@@ -181,15 +188,16 @@
                                     <p id="manCondicion">Ejemplo</p>
                                 </div>
                             </div>
-                            <p id="manDesc">Descripción</p>
+                            <div id="manDisc" class="backgroundDisc"><p id="manDesc">Descripción</p></div>
                         </div>
+                        <button id="discardButton" class="discardButton" onclick="discardCard(3)">X</button>
                     </div>
                     
-                    <button id="drawButton3" style="width:fit-content; height:fit-content; padding-top:20px; padding-bottom:20px; display:initial" onclick="drawCard(3);">ROBAR CARTA</button>
+                    <button id="drawButton3" class="drawButton" onclick="drawCard(3);">ROBAR MANIOBRA</button>
                 </div>
-                <div id="slot4" class="slot" style="background-color: rgb(172, 218, 255)">
+                <div id="slot4" class="slot">
                     <div id="card4" class="cardContainer">
-                        <h1 id="manName" style="grid-column:1/span 3; text-align:center">Nombre maniobra</h1>
+                        <h1 id="manName" class="manName">Nombre maniobra</h1>
                         <div style="grid-column:1/span 2; display:flex">
                             <img id="manImg" style="width:64px; height:64px" src="images/test.png">
                             <h2 id="manType" style="margin-left:10px">Tipo</h2>
@@ -222,15 +230,16 @@
                                     <p id="manCondicion">Ejemplo</p>
                                 </div>
                             </div>
-                            <p id="manDesc">Descripción</p>
+                            <div id="manDisc" class="backgroundDisc"><p id="manDesc">Descripción</p></div>
                         </div>
+                        <button id="discardButton" class="discardButton" onclick="discardCard(4)">X</button>
                     </div>
                     
-                    <button id="drawButton4" style="width:fit-content; height:fit-content; padding-top:20px; padding-bottom:20px; display:initial" onclick="drawCard(4);">ROBAR CARTA</button>
+                    <button id="drawButton4" class="drawButton" onclick="drawCard(4);">ROBAR MANIOBRA</button>
                 </div>
-                <div id="slot5" class="slot" style="background-color: rgb(218, 172, 255)">
+                <div id="slot5" class="slot">
                     <div id="card5" class="cardContainer">
-                        <h1 id="manName" style="grid-column:1/span 3; text-align:center">Nombre maniobra</h1>
+                        <h1 id="manName" class="manName">Nombre maniobra</h1>
                         <div style="grid-column:1/span 2; display:flex">
                             <img id="manImg" style="width:64px; height:64px" src="images/test.png">
                             <h2 id="manType" style="margin-left:10px">Tipo</h2>
@@ -263,18 +272,19 @@
                                     <p id="manCondicion">Ejemplo</p>
                                 </div>
                             </div>
-                            <p id="manDesc">Descripción</p>
+                            <div id="manDisc" class="backgroundDisc"><p id="manDesc">Descripción</p></div>
                         </div>
+                        <button id="discardButton" class="discardButton" onclick="discardCard(5)">X</button>
                     </div>
                     
-                    <button id="drawButton5" style="width:fit-content; height:fit-content; padding-top:20px; padding-bottom:20px; display:initial" onclick="drawCard(5);">ROBAR CARTA</button>
+                    <button id="drawButton5" class="drawButton" onclick="drawCard(5);">ROBAR MANIOBRA</button>
                 </div>
                 
             </div>
             
-            <div class="sideNumber" style="grid-column-start: 3;">
-                <p style="color: #771111">Descartes:</p>
-                <h1 id="pilaDescartes" style="color: #771111;">0</h1>
+            <div class="sideNumber" style="grid-column-start: 3; color: #771111">
+                <h3>Descartes:</h3>
+                <h1 id="pilaDescartes">0</h1>
             </div>
         </div>
         
@@ -287,7 +297,7 @@
         var handPile = new Array(6);
         var discardPile = [];
         
-        for (var i = 0; i < 10/*maniobras.length*/; i++){
+        for (var i = 0; i < maniobras.length; i++){
             drawPile.push(i);
         }
         shuffle(drawPile);
@@ -307,9 +317,14 @@
             }
         }
         
-        function discardCard(index){
+        function discardCard(slotId){
             // WIP !!!!!!!
-            discardPile.push(handPile.splice(index, 1));
+            discardPile.push(handPile[slotId]);
+            handPile[slotId] = null;
+
+            document.getElementById("card"+ slotId).style.display="none";
+            document.getElementById("drawButton"+ slotId).style.display="initial";
+            updateUI();
         }
         
         function shuffle(deck){
@@ -330,7 +345,18 @@
         function fillCardData(slot, maneuver){
             var cardSlot = "card"+ slot;
             document.querySelector("#card"+ slot +" #manName").textContent=maniobras[maneuver].nombre;
-            //document.querySelector("#card"+ slot +" #manName").textContent=maniobras[maneuver].disciplina; Needs images
+
+            switch (maniobras[maneuver].disciplina){
+                case "devo": document.querySelector("#card"+ slot +" #manDisc").style.backgroundImage="url('images/dis_devoutSpirit.png')";
+                break;
+                case "drag": document.querySelector("#card"+ slot +" #manDisc").style.backgroundImage="url('images/dis_stoneDragon.png')";
+                break;
+                case "cuer": document.querySelector("#card"+ slot +" #manDisc").style.backgroundImage="url('images/dis_whiteRaven.png')";
+                break;
+                default: document.querySelector("#card"+ slot +" #manDisc").style.backgroundImage="url('images/error.gif')";
+                break;
+            }
+
             if (maniobras[maneuver].subtipo == ""){  //Si tiene subtipo, se le pone. Si no, solo cambiamos el tipo.
                 document.querySelector("#card"+ slot +" #manType").textContent=maniobras[maneuver].tipo;
             } else {
@@ -346,6 +372,7 @@
                 default: document.querySelector("#card"+ slot +" #manImg").src="images/error.gif";
                 break;
             }
+            
             document.querySelector("#card"+ slot +" #manLevel").textContent=maniobras[maneuver].nivel;
             document.querySelector("#card"+ slot +" #manAccion").textContent=maniobras[maneuver].accion;
             document.querySelector("#card"+ slot +" #manAlcance").textContent=maniobras[maneuver].alcance;
@@ -354,13 +381,11 @@
             document.querySelector("#card"+ slot +" #manCondicion").textContent=maniobras[maneuver].condicion;
             document.querySelector("#card"+ slot +" #manDesc").textContent=maniobras[maneuver].descripcion;
             
-            document.getElementById("card"+ slot).style.display="grid";
             document.getElementById("drawButton"+ slot).style.display="none";
+            document.getElementById("card"+ slot).style.display="grid";
             
         }
         
     </script>
 </body>
 </html>
-
-
