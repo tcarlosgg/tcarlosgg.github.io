@@ -25,7 +25,7 @@
                 <h1 id="pilaRobar">0</h1>
             </div>
             
-            <div style="width:100%; display:grid; grid-template-columns: auto auto; column-gap:20px; grid-template-rows: auto auto auto; row-gap:20px; justify-items: center; margin-top: 50px;">
+            <div style="min-width:100%; display:grid; grid-template-columns: 50% 50%; column-gap:20px; grid-template-rows: auto auto auto; row-gap:50px; justify-items:center; margin-top:50px">
                 <div id="slot0" class="slot">
                     <div id="card0" class="cardContainer">
                         <h1 id="manName" class="manName">Nombre maniobra</h1>
@@ -297,7 +297,7 @@
         var handPile = new Array(6);
         var discardPile = [];
         
-        for (var i = 0; i < maniobras.length; i++){
+        for (let i = 0; i < maniobras.length; i++){
             drawPile.push(i);
         }
         shuffle(drawPile);
@@ -307,7 +307,15 @@
         
         function drawCard(slotId){
             if(drawPile.length == 0){
-                //Not sure yet.
+                if(discardPile.length > 0){
+                    for (let i = discardPile.length-1; i >= 0; i--) {
+                        drawPile.push(discardPile.pop());
+                        alert("drawPile: "+ drawPile +"\ndiscardPile: "+ discardPile);
+                    }
+                    shuffle(drawPile);
+                    alert(drawPile);
+                    drawCard(slotId);
+                }
             }
             else {
                 var maneuverId = drawPile.pop();
@@ -318,7 +326,6 @@
         }
         
         function discardCard(slotId){
-            // WIP !!!!!!!
             discardPile.push(handPile[slotId]);
             handPile[slotId] = null;
 
@@ -328,10 +335,10 @@
         }
         
         function shuffle(deck){
-            for (var i = deck.length - 1; i>0; i--){
-                var j = Math.floor(Math.random() * (i+1));
+            for (let i = deck.length - 1; i>0; i--){
+                let j = Math.floor(Math.random() * (i+1));
                 
-                var temp = deck[i];
+                let temp = deck[i];
                 deck[i] = deck[j];
                 deck[j] = temp;
             }

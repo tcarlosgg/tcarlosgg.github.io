@@ -4,7 +4,7 @@ maniobras = [
     Disciplina:   Espíritu Devoto (devo), Dragón de Piedra (drag) o Cuervo Blanco (cuer)    |   Solo hay que escribir las cuatro letras
     Tipo:         Golpe, Impulso o Contraataque                                             |   Tiene que estar escrito exactamente así o dará error
     Subtipo:      Fuego, Orden, etc. Solo algunas maniobras tienen subtipo. Si no tiene subtipo, deja las comillas vacías: ""
-    Nivel:        Nivel de iniciador mínimo para adquirir la maniobra                       |   Recomiendo poner solo el número
+    Nivel:        Nivel de la maniobra. El nível mínimo de cruzado para aprender y usar una maniobra no es el mismo que el nivel de la maniobra.
     Acción:       Acción usada para inicial la maniobra: Estándar, rápida, inmediata, etc.
     Alcance:      Dónde tiene que estar el objetivo: Es un efecto personal, de ataque cuerpo-a-cuerpo, a larga distancia...?
     Objetivo:     A quién afecta: A ti, a una criatura, un área...?
@@ -14,67 +14,67 @@ maniobras = [
     */
     {
         "nombre":       "Maniobra de ejemplo",
-        "disciplina":   "",
-        "tipo":         "",
-        "subtipo":      "",
-        "nivel":        "",
-        "accion":       "",
-        "alcance":      "",
-        "objetivo":     "",
-        "duracion":     "",
-        "condicion":    "",
-        "descripcion":  "Esto es un ejemplo"
+        "disciplina":   "devo",
+        "tipo":         "Golpe",
+        "subtipo":      "Ejemplo",
+        "nivel":        "0",
+        "accion":       "Estándar",
+        "alcance":      "Cuerpo a cuerpo",
+        "objetivo":     "1 criatura",
+        "duracion":     "Instantánea",
+        "condicion":    "Atacar",
+        "descripcion":  "Esto es un ejemplo muy ejemplar"
     },
     {
         "nombre":       "Maniobra de Heimlich",
         "disciplina":   "devo",
-        "tipo":         "",
-        "subtipo":      "",
-        "nivel":        "",
-        "accion":       "",
-        "alcance":      "",
-        "objetivo":     "",
-        "duracion":     "",
-        "condicion":    "",
-        "descripcion":  ""
+        "tipo":         "Contraataque",
+        "subtipo":      "Médico",
+        "nivel":        "2",
+        "accion":       "Inmediata",
+        "alcance":      "Toque",
+        "objetivo":     "1 criatura",
+        "duracion":     "1 ronda",
+        "condicion":    "Presa",
+        "descripcion":  "También llamada compresiones abdominales, es un procedimiento de primeros auxilios para desobstruir el conducto respiratorio, normalmente bloqueado por un trozo de alimento o cualquier otro objeto. Es una técnica efectiva para salvar vidas en caso de asfixia por atragantamiento."
     },
     {
         "nombre":       "Maniobra evasiva",
         "disciplina":   "cuer",
-        "tipo":         "Golpe",
+        "tipo":         "Contraataque",
         "subtipo":      "",
-        "nivel":        "",
-        "accion":       "",
-        "alcance":      "",
-        "objetivo":     "",
-        "duracion":     "",
-        "condicion":    "",
-        "descripcion":  ""
+        "nivel":        "5",
+        "accion":       "Ronda entera",
+        "alcance":      "Personal",
+        "objetivo":     "Tú",
+        "duracion":     "Instantánea",
+        "condicion":    "Recibir ataque",
+        "descripcion":  "Kilo-Kilo, aquí Golf-Bravo; tengo un hostil en cola. Solicitando permiso para iniciar maniobras evasivas y derribarlo. Cambio."
     },
     {
         "nombre":       "Maniobra de teatro",
         "disciplina":   "drag",
         "tipo":         "Impulso",
         "subtipo":      "",
-        "nivel":        "",
-        "accion":       "",
-        "alcance":      "",
-        "objetivo":     "",
-        "duracion":     "",
-        "condicion":    "",
-        "descripcion":  ""
+        "nivel":        "3",
+        "accion":       "Ronda entera",
+        "alcance":      "Personal",
+        "objetivo":     "Radio de 100 pies",
+        "duracion":     "45 minutos",
+        "condicion":    "TS de Carisma",
+        "descripcion":  "Montas una obra de teatro to chula y entretienes a todos los presentes el rato que dura la función."
     },
     {
         "nombre":       "Mano de obra",
         "disciplina":   "drag",
-        "tipo":         "Contraataque",
+        "tipo":         "Golpe",
         "subtipo":      "Orden",
-        "nivel":        "",
-        "accion":       "",
-        "alcance":      "",
-        "objetivo":     "",
-        "duracion":     "",
-        "condicion":    "",
-        "descripcion":  ""
+        "nivel":        "9",
+        "accion":       "Estándar",
+        "alcance":      "Cuerpo a cuerpo",
+        "objetivo":     "Cubo de 15 pies",
+        "duracion":     "Instantánea",
+        "condicion":    "Atacar",
+        "descripcion":  "Como parte de esta maniobra realizas un ataque cuerpo a cuerpo. Si el ataque es exitoso, una cuadrilla de goblins obreros es invocada, que de inmediato construyen una pequeña casa alrededor de la criatura objetivo y luego te invitan a birra."
     }
 ];
