@@ -310,10 +310,8 @@
                 if(discardPile.length > 0){
                     for (let i = discardPile.length-1; i >= 0; i--) {
                         drawPile.push(discardPile.pop());
-                        alert("drawPile: "+ drawPile +"\ndiscardPile: "+ discardPile);
                     }
                     shuffle(drawPile);
-                    alert(drawPile);
                     drawCard(slotId);
                 }
             }
@@ -395,4 +393,5 @@
         
     </script>
 </body>
+
 </html>
