@@ -1,17 +1,19 @@
+maniobrasConocidas = 5;
+maniobrasPreparadas = 5;
+/*
+Nombre:       Nombre de la maniobra
+Disciplina:   Espíritu Devoto (devo), Dragón de Piedra (drag) o Cuervo Blanco (cuer)    |   Solo hay que escribir la abreviación de cuatro letras
+Tipo:         Golpe, Impulso o Contraataque                                             |   Tiene que estar escrito exactamente así o dará error
+Subtipo:      Fuego, Orden, etc. Solo algunas maniobras tienen subtipo.                 |   Si no tiene subtipo, deja las comillas vacías: ""
+Nivel:        Nivel de la maniobra. El nível mínimo de cruzado para aprender y usar una maniobra es el doble que el nivel de la maniobra menos 1.
+Acción:       Acción usada para iniciar la maniobra: Estándar, rápida, inmediata, etc.
+Alcance:      Dónde tiene que estar el objetivo: Es un efecto personal, de ataque cuerpo-a-cuerpo, a larga distancia...?
+Objetivo:     A quién afecta: A ti, a una criatura, un área...?
+Duración:     La maniobra termina en cuanto se realiza (Instantánea), o tiene un efecto persistente...?
+Condición:    Qué debe cumplirse para que la maniobra surja efecto? Atacar exitosamente, que el enemigo supere una Tirada de Salvación...?
+Descripción:  Explicación adicional.                                                    |   Puede ser larga, pero no sé qué pasará si el texto se sale... XD
+*/
 maniobras = [
-    /*
-    Nombre:       Nombre de la maniobra
-    Disciplina:   Espíritu Devoto (devo), Dragón de Piedra (drag) o Cuervo Blanco (cuer)    |   Solo hay que escribir las cuatro letras
-    Tipo:         Golpe, Impulso o Contraataque                                             |   Tiene que estar escrito exactamente así o dará error
-    Subtipo:      Fuego, Orden, etc. Solo algunas maniobras tienen subtipo. Si no tiene subtipo, deja las comillas vacías: ""
-    Nivel:        Nivel de la maniobra. El nível mínimo de cruzado para aprender y usar una maniobra no es el mismo que el nivel de la maniobra.
-    Acción:       Acción usada para inicial la maniobra: Estándar, rápida, inmediata, etc.
-    Alcance:      Dónde tiene que estar el objetivo: Es un efecto personal, de ataque cuerpo-a-cuerpo, a larga distancia...?
-    Objetivo:     A quién afecta: A ti, a una criatura, un área...?
-    Duración:     La maniobra termina en cuanto se realiza (Instantánea), tiene un efecto persistente...?
-    Condición:    Qué debe cumplirse para que la maniobra surja efecto? Atacar exitosamente, que el enemigo supere una Clase de Dificultad...?
-    Descripción:  Explicación adicional.                                                    |   Puede ser larga, pero no sé qué pasará si el texto se sale... XD
-    */
     {
         "nombre":       "Maniobra de ejemplo",
         "disciplina":   "devo",

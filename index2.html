@@ -3,16 +3,24 @@
 
 <head>
     <title>Maniobras de cruzado</title>
-    <script src="Maniobras.js"></script>
+    <script src="Maniobras.js" defer></script>
+    <script src="cardManager.js" defer></script>
     <meta name="viewport" content="width=device-width, height=device-height, initial-scale=0.5">
     
     <style>
         *               {box-sizing:border-box;}
         body            {background-color: #afafaf; height:100vh; margin:0}
-        .dataHeader     {display:grid; grid-template-columns:10% auto 10%; background-color: yellow; width:100%; height:fit-content; position:sticky; top:0; left:0; overflow-y: hidden; text-align: center;}
+        .dataHeader     {display:grid; grid-template-columns:15% auto 15%; background-color: yellow; width:100%; height:fit-content; position:sticky; top:0; left:0; overflow-y:hidden; text-align: center;}
         .sideNumber     {background-color: magenta; overflow-wrap:break-word;}
-        .pageContent    {background-color:red; display:grid; height:85%; grid-template-columns: auto auto; column-gap:25px; grid-template-rows: auto auto auto; row-gap:25px; padding:2%; align-items:center;}
-        .slot           {background-color:aquamarine; width:100%; height:100%}
+        .pageContent    {background-color:red; display:grid; height:100%; grid-template-columns:repeat(2, minmax(0, 1fr)); column-gap:25px; grid-template-rows:repeat(3, minmax(0, 1fr)); row-gap:25px; padding:2%;}
+        .slot           {background-color:aquamarine; width:100%; height:100%; padding:5px 20px; text-align: center; align-content: center; outline:double 6px black; overflow-wrap:anywhere; overflow:auto;}
+        .slot::-webkit-scrollbar {display: none;}
+        .drawButton     {background-color: rgb(255, 252, 155); width:fit-content; height:fit-content; color:#776911; border-width:3px; border-color: #776911; padding: 10px 5px; font-weight:bold;}
+        .card           {display:none; grid-template-columns:auto auto auto; padding:20px; text-align:left;}
+        .manName        {grid-column:1/span 3; text-align:center; background-color:rgb(229,229,229)}
+        .smallText      {color:#696969; font-size:10pt; margin-bottom: -15px}
+        .backgroundDisc {height:100%; width:100%; background-image:url(''); background-size:contain; background-repeat:no-repeat; background-position-x:center; filter:brightness(0.9)}
+        .discardButton  {background-color: rgb(255, 100, 100); color:white; justify-self:right; border-radius:100%; border-width:3px; border-color: #771111; padding:5px 10px; grid-column-start:3; width:fit-content; font-weight:bold;}
     </style>
     
 </head>
@@ -24,11 +32,7 @@
             <h3>Mazo:</h3>
             <h1 id="pilaRobar">0</h1>
         </div>
-        
-        <div style="align-content:center; justify-content:center;">
-            <p>En combate, justo <b>antes de iniciar tu turno</b>, <b>dos maniobras</b> te son aleatoriamente concedidas.<br><b>Al final </b>de cada uno de tus turnos, se te concede <b>una maniobra</b> más. Mantienes listas para tus siguientes turnos las maniobras que no hayas gastado.<br>Si al final del turno no se te puede conceder ninguna maniobra, <b>todas</b> tus maniobras gastadas son recuperadas y se te conceden aleatoriamente <b>dos</b> de esas maniobras.</p>
-        </div>
-        
+        <div></div>
         <div class="sideNumber">
             <h3>Descartes:</h3>
             <h1 id="pilaDescartes">0</h1>
@@ -36,15 +40,56 @@
     </div>
     
     
-    <div class="pageContent">
-        <div id="slot0" class="slot"><p>A</p></div>
-        <div id="slot1" class="slot"><p>B</p></div>
-        <div id="slot2" class="slot"><p>C</p></div>
-        <div id="slot3" class="slot"><p>D</p></div>
-        <div id="slot4" class="slot"><p>E</p></div>
-        <div id="slot5" class="slot"><p>F</p></div>
+    <div id="contentGrid" class="pageContent">
+        <div class="slot" style="grid-column-start:2; grid-row-start:3; overflow-wrap:normal;">
+            <p>En combate, justo <b>antes de iniciar tu turno</b>, <b>dos maniobras</b> te son aleatoriamente concedidas.<br><b>Al final </b>de cada uno de tus turnos, se te concede <b>una maniobra</b> más. Mantienes listas para tus siguientes turnos las maniobras que no hayas gastado.<br>Si al final del turno no se te puede conceder ninguna maniobra, <b>todas</b> tus maniobras gastadas son recuperadas y se te conceden aleatoriamente <b>dos</b> de esas maniobras.</p>
+        </div>
+        
+        <div id="slot0" class="slot">
+            <div class="card">
+                <h1 class="manName">Nombre maniobra</h1>
+                <div style="grid-column:1/span 2; display:flex">
+                    <img class="manImg" style="width:64px; height:64px" src="">
+                    <h2 class="manType" style="margin-left:10px">Tipo</h2>
+                </div>
+                
+                <div class="dataSlice" style="margin-right:-20px">
+                    <p class="smallText" style="text-align:center">Nivel:</p>
+                    <h2 class="manLevel" style="text-align:center;">0</h2>
+                </div>
+                <div style="grid-column:1/span 3; display:grid; grid-template-columns: 30% 70%">
+                    <div style="display:grid; grid-template-rows: auto auto auto auto auto;">
+                        <div class="dataSlice">
+                            <p class="smallText">Acción:</p>
+                            <p class="manAccion">Ejemplo</p>
+                        </div>
+                        <div class="dataSlice">
+                            <p class="smallText">Alcance:</p>
+                            <p class="manAlcance">Ejemplo</p>
+                        </div>
+                        <div class="dataSlice">
+                            <p class="smallText">Objetivo:</p>
+                            <p class="manObjetivo">Ejemplo</p>
+                        </div>
+                        <div class="dataSlice">
+                            <p class="smallText">Duración:</p>
+                            <p class="manDuracion">Ejemplo</p>
+                        </div>
+                        <div class="dataSlice">
+                            <p class="smallText">Condición:</p>
+                            <p class="manCondicion">Ejemplo</p>
+                        </div>
+                    </div>
+                    <div class="backgroundDisc"><p class="manDesc">Descripción</p></div>
+                </div>
+                
+                <button class="discardButton" onclick="discardCard(0)">X</button>
+            </div>
+            
+            <button class="drawButton" onclick="drawCard(0);">ROBAR MANIOBRA</button>
+        </div>
     </div>
-</body>
 
+</body>
 
 </html>

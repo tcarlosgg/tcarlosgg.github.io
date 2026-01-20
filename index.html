@@ -16,7 +16,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=0.1">
 </head>
 <body style="background-color: #afafaf;">
-    <a href="index2.html">Pruebas de UI</a>
+    
     <div style="display:grid">
         
         <div style="display:grid; grid-template-columns:8% auto 8%">
@@ -310,8 +310,10 @@
                 if(discardPile.length > 0){
                     for (let i = discardPile.length-1; i >= 0; i--) {
                         drawPile.push(discardPile.pop());
+                        alert("drawPile: "+ drawPile +"\ndiscardPile: "+ discardPile);
                     }
                     shuffle(drawPile);
+                    alert(drawPile);
                     drawCard(slotId);
                 }
             }
@@ -393,6 +395,4 @@
         
     </script>
 </body>
-
 </html>
-
