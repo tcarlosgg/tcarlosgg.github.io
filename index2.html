@@ -10,16 +10,16 @@
     <style>
         *               {box-sizing:border-box;}
         body            {background-color: #afafaf; height:100vh; margin:0}
-        .dataHeader     {display:grid; grid-template-columns:15% auto 15%; background-color: yellow; width:100%; height:fit-content; position:sticky; top:0; left:0; overflow-y:hidden; text-align: center;}
+        .dataHeader     {display:grid; grid-template-columns:15% auto 15%; background-color: yellow; width:100%; height:fit-content; position:sticky; top:0; left:0; overflow-y:hidden; text-align: center; z-index:100;}
         .sideNumber     {background-color: magenta; overflow-wrap:break-word;}
         .pageContent    {background-color:red; display:grid; height:100%; grid-template-columns:repeat(2, minmax(0, 1fr)); column-gap:25px; grid-template-rows:repeat(3, minmax(0, 1fr)); row-gap:25px; padding:2%;}
-        .slot           {background-color:aquamarine; width:100%; height:100%; padding:5px 20px; text-align: center; align-content: center; outline:double 6px black; overflow-wrap:anywhere; overflow:auto;}
+        .slot           {background-color:aquamarine; width:100%; height:100%; padding:5px 20px; text-align: center; align-content: center; outline:double 6px black; overflow-wrap:break-word; overflow-y:auto; overflow-x:hidden;}
         .slot::-webkit-scrollbar {display: none;}
         .drawButton     {background-color: rgb(255, 252, 155); width:fit-content; height:fit-content; color:#776911; border-width:3px; border-color: #776911; padding: 10px 5px; font-weight:bold;}
         .card           {display:none; grid-template-columns:auto auto auto; padding:20px; text-align:left;}
         .manName        {grid-column:1/span 3; text-align:center; background-color:rgb(229,229,229)}
         .smallText      {color:#696969; font-size:10pt; margin-bottom: -15px}
-        .backgroundDisc {height:100%; width:100%; background-image:url(''); background-size:contain; background-repeat:no-repeat; background-position-x:center; filter:brightness(0.9)}
+        .backgroundDisc {height:100%; width:100%; background-image:url(''); background-size:contain; background-repeat:no-repeat; background-position-x:center; filter:brightness(0.9);}
         .discardButton  {background-color: rgb(255, 100, 100); color:white; justify-self:right; border-radius:100%; border-width:3px; border-color: #771111; padding:5px 10px; grid-column-start:3; width:fit-content; font-weight:bold;}
     </style>
     
@@ -32,7 +32,7 @@
             <h3>Mazo:</h3>
             <h1 id="pilaRobar">0</h1>
         </div>
-        <div></div>
+        <div style="background-color: rgb(255, 255, 159)"></div>
         <div class="sideNumber">
             <h3>Descartes:</h3>
             <h1 id="pilaDescartes">0</h1>
